@@ -7,32 +7,22 @@ public class LinkedListTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Node first = new Node(3);
-		MyLinkedList mylist = new MyLinkedList();
 		
-		System.out.println(mylist.isEmpty());
 		
-		for(int i=0 ; i< 5; i++){
-			Scanner scan = new Scanner(System.in);
-			System.out.println("Enter the data for the next node");
-			int data = scan.nextInt();
-			if(mylist.firstNode == null)
-			{
-			mylist.insertAtStart(data);
-			}
-			else{
-				mylist.insertAtEnd(data);
-			}
-		}
 		
-		//mylist.insertAtPos(3, 5);
-		//System.out.println(mylist.getSize());
+		
+		MyLinkedList mylist = createList();
+		
+		
+		
+		mylist.insertAtPos(3, 5);
+		System.out.println(mylist.getSize());
+		//mylist.displayList(mylist);
+		
+		mylist.deleteLastNode();
 		//mylist.displayList(mylist);
 		//System.out.println("End");
-		//mylist.deleteLastNode();
-		//mylist.displayList(mylist);
-		//System.out.println("End");
-		//mylist.deleteAtPos(3);
+		mylist.deleteAtPos(3);
 		//mylist.displayList(mylist);
 		
 		//mylist.sortList(mylist);
@@ -72,6 +62,25 @@ public class LinkedListTest {
 		            ptr1 = ptr1.nextNode;
 		        }
 		    }
+		 
+		 public static MyLinkedList createList(){
+			 
+			 MyLinkedList list = new MyLinkedList();
+			 for(int i=0 ; i< 5; i++){
+					Scanner scan = new Scanner(System.in);
+					System.out.println("Enter the data for the next node");
+					int data = scan.nextInt();
+				
+					if(list.firstNode == null)
+					{
+					list.insertAtStart(data);
+					}
+					else{
+						list.insertAtEnd(data);
+					}
+				}
+			 return list;
+		 }
 	
 	
 	
