@@ -89,12 +89,13 @@ public class MyLinkedList {
 	
 	public void deleteLastNode(){
 		Node pntr=firstNode;
-		for(int i=0; i< size; i++){
+		for(int i=1; i< size-1; i++){
 			pntr= pntr.nextNode;
 		}
 		
 		pntr.nextNode = null;
 		size--;
+			
 	}
 	
 	public void deleteAtPos(int pos){
@@ -103,7 +104,7 @@ public class MyLinkedList {
 			return;
 		}
 		else{
-		for(int i=0; i<pos-1; i++){
+		for(int i=1; i<pos-1; i++){
 			pntr = pntr.nextNode;
 		}
 		pntr.nextNode = pntr.nextNode.nextNode;
@@ -117,16 +118,32 @@ public class MyLinkedList {
 			System.out.println("Its an empty list" );
 		}
 		else{
-			for(int i=0; i< list.size-1; i++){
+			for(int i=0; i<list.size-2; i++){
+				while(pntr != null){
 				System.out.println(pntr.data);
 				pntr = pntr.nextNode;
 			}
+		}
 		}
 		
 		
 	}
 	
-
+	public void sortList(MyLinkedList list){
+		Node pntr = firstNode;
+		for(int i=0; i<size-1;i++){
+			
+			if(pntr.data >= pntr.nextNode.data){
+				int temp = pntr.data;
+				pntr.data = pntr.nextNode.data;
+				pntr.nextNode.data = temp;
+				pntr = pntr.nextNode;
+			}
+		
+		
+	}
+	
+	}
 	
 
 }
