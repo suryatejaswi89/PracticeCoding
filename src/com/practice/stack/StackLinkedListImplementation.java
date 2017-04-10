@@ -29,20 +29,24 @@ public class StackLinkedListImplementation {
 	}
 	
 	
-	public Node pop(StackLinkedListImplementation list){
-		Node node = new Node();
+	public int pop(StackLinkedListImplementation list){
+		int ele;
+		int i =34;
+		System.out.println(i);
+		System.out.println(list.top.ele);
 		if(list.top == null){
+			
 			System.out.println("stack is empty");
-			return node;
+			return 0;
 		}
 		else{
 			
-			node = list.top;
+			ele = list.top.ele;
 			list.top = list.top.next;
 			list.total--;
 		}
-		System.out.println(node.ele);
-		return node;
+		System.out.println(ele);
+		return ele;
 	}
 	
 	public int returnSize(){

@@ -17,6 +17,7 @@ public class StackTest {
 		
 		System.out.println(newStack.top.getNode());
 		newStack.displayStack();
+		
 		newStack.pop(newStack);
 		//newStack.displayStack();
 		
