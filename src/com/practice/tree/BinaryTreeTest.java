@@ -21,33 +21,13 @@ public class BinaryTreeTest {
 		myTree.preOrderTraversal(myTree.root);
 		
 		
-		System.out.println(findMin(myTree));
-		System.out.println(findMax(myTree));
+		System.out.println(myTree.findMin(myTree));
+		System.out.println(myTree.findMax(myTree));
+		System.out.println(myTree.findNode(myTree, 11).value);
 		
 	}
 	
-	public static int findMin(BinaryTree tree){
-		int min =0;
-		BinaryTreeNode focusNode = tree.root;
-		while(focusNode.leftChild != null){
-			focusNode = focusNode.leftChild;
-		}
-		
-		min = focusNode.value;
-		
-		return min;
-	}
 	
-	public static int findMax(BinaryTree tree){
-		int max =0;
-		BinaryTreeNode focusNode = tree.root;
-		while(focusNode.rightChild != null){
-			focusNode = focusNode.rightChild;
-		}
-		
-		max = focusNode.value;
-		
-		return max;
-	}
+	
 
 }

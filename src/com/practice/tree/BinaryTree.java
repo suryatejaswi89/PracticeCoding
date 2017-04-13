@@ -68,7 +68,59 @@ public class BinaryTree {
 			}
 		
 		}
+		
+		public static int findMax(BinaryTree tree){
+			int max =0;
+			BinaryTreeNode focusNode = tree.root;
+			while(focusNode.rightChild != null){
+				focusNode = focusNode.rightChild;
+			}
+			
+			max = focusNode.value;
+			
+			return max;
+		}
+		public static int findMin(BinaryTree tree){
+			int min =0;
+			BinaryTreeNode focusNode = tree.root;
+			while(focusNode.leftChild != null){
+				focusNode = focusNode.leftChild;
+			}
+			
+			min = focusNode.value;
+			
+			return min;
+		}
+		
+		
+			public static BinaryTreeNode findNode(BinaryTree tree, int num){
+				
+				BinaryTreeNode focusNode = tree.root;
+	
+				while(focusNode != null){
+				if(focusNode.value == num){
+					return focusNode;
+				}
+				
+				else if(focusNode.value < num){
+					if(focusNode.rightChild.value == num)
+						return focusNode.rightChild;
+					focusNode = focusNode.rightChild;
+					
+				}
+				else{
+					if(focusNode.leftChild.value == num)
+						return focusNode.leftChild;
+					focusNode = focusNode.leftChild;
+				}
+				
+				}
+				return focusNode;
+				
+				
+		
 	}
+}
 	
 	
 	
