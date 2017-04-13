@@ -21,6 +21,21 @@ public class BinaryTreeTest {
 		myTree.preOrderTraversal(myTree.root);
 		
 		
+		System.out.println(findMin(myTree));
+		
+		
+	}
+	
+	public static int findMin(BinaryTree tree){
+		int min =0;
+		BinaryTreeNode focusNode = tree.root;
+		while(focusNode.leftChild != null){
+			focusNode = focusNode.leftChild;
+		}
+		
+		min = focusNode.value;
+		
+		return min;
 	}
 
 }
