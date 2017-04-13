@@ -22,7 +22,7 @@ public class BinaryTreeTest {
 		
 		
 		System.out.println(findMin(myTree));
-		
+		System.out.println(findMax(myTree));
 		
 	}
 	
@@ -36,6 +36,18 @@ public class BinaryTreeTest {
 		min = focusNode.value;
 		
 		return min;
+	}
+	
+	public static int findMax(BinaryTree tree){
+		int max =0;
+		BinaryTreeNode focusNode = tree.root;
+		while(focusNode.rightChild != null){
+			focusNode = focusNode.rightChild;
+		}
+		
+		max = focusNode.value;
+		
+		return max;
 	}
 
 }
